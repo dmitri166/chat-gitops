@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: 025988852505.dkr.ecr.us-east-1.amazonaws.com/chat-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "300m"
+    memory: "256Mi"
+
+service:
+  type: ClusterIP
+  port: 80
+
+nodeSelector: {}
+tolerations: []
